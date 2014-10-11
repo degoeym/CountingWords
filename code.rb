@@ -25,13 +25,7 @@ end
 File.readlines('speech.txt').each do |line|
 	words = line.split(/\W+/)
 	count = Hash.new(0)
-	words.each { |w| 
-		if count.has_key?(w)
-			count[w] = count[w] + 1
-		else
-			count[w] = 1
-		end
-	}
+	words.each { |w| count[word] += 1 }
 	count = count.sort_by { |x, y| y }
 	count.reverse
 	count.each { |word, count| puts count.to_s + "-" + word }
